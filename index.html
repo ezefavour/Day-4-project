@@ -21,22 +21,25 @@
     }
     body.dark {
             background-color: #1a202c; /* Dark mode background */
-            /* color: white; Dark mode text */
+            color: white; /*Dark mode text*/
         }
-        body .dark h1{
+        /* body .dark h1{
             color: #ffffff;
         }
+        body .dark h1{
+            color: #000000;
+        } */
         body.light {
             background-color: #f7fafc; /* Light mode background */
-            /* color: black; Light mode text */
+            color: black; /*Light mode text*/
         }
 
         .dark .bg-white {
             background-color: #2d3748 !important; /* Dark mode for the to-do list container */
         }
-        body{
+        /* body{
             background: #000000;
-        }
+        } */
 
     .btn:hover {
         transform: scale(1.1);
@@ -55,7 +58,7 @@
         </div>
 
         <!-- Display -->
-        <input id="display" class="w-full text-right text-2xl p-4 mb-4 border rounded-lg bg-gray-50 dark:bg-gray-800 dark:text-white" type="text" disabled>
+        <input id="display" class="w-full text-right text-2xl p-4 mb-4 border rounded-lg bg-gray-50 dark:bg-gray-800 dark:text-zinc-200" type="text" disabled>
 
         <!-- Buttons -->
         <div class="grid grid-cols-4 gap-4">
