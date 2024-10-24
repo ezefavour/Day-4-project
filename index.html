@@ -9,6 +9,41 @@
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+<style>
+    .btn {
+        background-color: #3b82f6;
+        color: white;
+        font-size: 1.25rem;
+        padding: 1rem;
+        text-align: center;
+        border-radius: 0.5rem;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    body.dark {
+            background-color: #1a202c; /* Dark mode background */
+            /* color: white; Dark mode text */
+        }
+        body .dark h1{
+            color: #ffffff;
+        }
+        body.light {
+            background-color: #f7fafc; /* Light mode background */
+            /* color: black; Light mode text */
+        }
+
+        .dark .bg-white {
+            background-color: #2d3748 !important; /* Dark mode for the to-do list container */
+        }
+        body{
+            background: #000000;
+        }
+
+    .btn:hover {
+        transform: scale(1.1);
+        background-color: #2563eb;
+    }
+</style>
+
 <body class="bg-gray-100 flex items-center justify-center h-screen transition-colors duration-300 light">
     <div class="bg-white dark:bg-gray-900 shadow-lg p-6 rounded-lg w-80 transition-colors duration-300">
         <div class="flex justify-between items-center mb-4">

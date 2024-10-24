@@ -48,22 +48,21 @@ buttons.forEach(button => {
 themeToggleBtn.addEventListener('click', toggleTheme);
 
 function toggleTheme() {
-    const body = document.body;
-    const isDarkMode = body.classList.contains('dark');
-
-    if (isDarkMode) {
-        body.classList.remove('dark');
-        body.classList.add('light');
-        themeIcon.classList.replace('fa-sun', 'fa-moon');
-        themeIcon.classList.replace('text-yellow-500', 'text-gray-400');
-        localStorage.setItem('theme', 'light');
-    } else {
-        body.classList.remove('light');
-        body.classList.add('dark');
-        themeIcon.classList.replace('fa-moon', 'fa-sun');
+    const currentTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
+    document.body.classList.toggle('dark');
+    document.body.classList.toggle('light');
+    
+    if (currentTheme === 'light') {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
         themeIcon.classList.replace('text-gray-400', 'text-yellow-500');
-        localStorage.setItem('theme', 'dark');
+    } else {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+        themeIcon.classList.replace('text-yellow-500', 'text-gray-400');
     }
+
+    localStorage.setItem('theme', currentTheme);
 }
 
 // Load the theme from localStorage when the page loads
@@ -73,9 +72,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (savedTheme === 'dark') {
         themeIcon.classList.replace('fa-moon', 'fa-sun');
-        themeIcon.classList.replace('text-gray-400', 'text-yellow-500');
+        themeIcon.classList.replace('text-yellow-500', 'text-gray-400');
     } else {
         themeIcon.classList.replace('fa-sun', 'fa-moon');
-        themeIcon.classList.replace('text-yellow-500', 'text-gray-400');
+        themeIcon.classList.replace('text-gray-400', 'text-yellow-500');
     }
 });
